@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1
+        class="essay-title"
+        aria-placeholder="Untitled essay"
+        contenteditable="true"
+      >
+        Untitled essay
+      </h1>
+      <button id="save-file-button">Save File</button>
+      <input type="file" id="load-file-input" />
+
+      <script>
+        // JavaScript code for handling the click event on the "Save File" button
+        const saveFileButton = document.getElementById("save-file-button");
+        saveFileButton.addEventListener("click", function () {
+          const editorContent = document.getElementById("editor").value;
+          const blob = new Blob([editorContent], { type: "text/plain" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "file.txt";
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+
+        // JavaScript code for handling the change event on the "Load File" input
+        const loadFileInput = document.getElementById("load-file-input");
+        loadFileInput.addEventListener("change", function () {
+          const file = loadFileInput.files[0];
+          const reader = new FileReader();
+          reader.onload = function () {
+            const editor = document.getElementById("editor");
+            editor.value = reader.result;
+            const essayTitle = document.querySelector(".essay-title");
+            essayTitle.textContent = file;
+          };
+          reader.readAsText(file);
+        });
+      </script>
+    </header>
+
+    <div class="editor-container">
+      <textarea
+        id="editor"
+        placeholder="Start typing..."
+        rows="10"
+        cols="50"
+        style="resize: none"
+      ></textarea>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+:root {
+  /* --palette-primary: #222831;
+  --palette-secondary: #30475e;
+  --palette-tertiary: #dddddd;
+  --palette-quaternary: #30475e; */
+  /* material dark mode theme */
+  --palette-primary: #212121;
+  --palette-secondary: #424242;
+  --palette-tertiary: #616161;
+  --palette-quaternary: #757575;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--palette-tertiary);
+  border-radius: 20px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--palette-quaternary);
+}
+
+header {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* contents should be aligned left */
+  text-align: left;
+}
+
+body {
+  background-color: var(--palette-primary);
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.editor-container {
+  margin: 20px auto;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#editor::-webkit-scrollbar {
+  display: none;
+}
+#editor {
+  height: 80%;
+}
+
+/* placeholder */
+::-webkit-input-placeholder {
+  color: #fff;
+}
+#document-title {
+  color: #fff;
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+#document-body {
+  background-color: var(--palette-secondary);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+}
+
+#document-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+#document-save {
+  background-color: var(--palette-tertiary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#document-save:hover {
+  background-color: var(--palette-quaternary);
+}
+#editor {
+  font-family: "Inter", sans-serif;
+}
+
+#editor {
+  background-color: var(--palette-quaternary);
+  color: #e5e5e5;
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+  width: 100%;
+  height: 500px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+}
+
+h1.essay-title {
+  color: #fff;
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+.editor-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
+  margin: 0 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+button,
+input {
+  background-color: var(--palette-tertiary);
+  color: #fff;
+  /* thinner */
+  height: 2rem;
+  border: none;
+  border-radius: 2px;
+  /* vertical padding */
+  padding: 0.2rem 1rem;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  /* align button left */
+  text-align: left;
+}
+
+button:hover {
+  background-color: var(--palette-quaternary);
+}
+
+button:focus {
+  outline: none;
+}
